@@ -2,49 +2,57 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
+body{
+    font-family: 'Roboto', sans-serif;
+}
 header{
     width: 100%;
-    height: 80px;
+    height: 106px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 23px;
-    margin-bottom: 26px;
     font-size: 42px;
     position: fixed;
     top:0px;
     left:0px;
+    background-color: white;
+    border-bottom: solid 26px #e5e5e5;
+}
+header ion-icon{
+    cursor: pointer;
 }
 header img{
     height: 53px;
     width: 75px;
 }
-h1{
+strong{
     font-weight: 700;
 }
-h2{
-    font-weight: 400;
-}
-h3{
+
+span{
     color:#aaaaaa;
     font-weight: 400;
 }
+
 .conteudo{
-    height: calc(100%-160px);
-    margin-top: 80px;
-    background-color:  #E5E5E5;
+    width: 100%;
+    margin-bottom: 80px;
+    background-color: #e5e5e5;
 }
+
 .mensagens{
     width: 100%;
-    height: 40px;
+    min-height: 40px;
     margin-bottom: 4px;
     border-radius: 2px;
     font-size: 14px;
-    padding: 0px 9px;
+    padding: 14px 9px;
     display: flex;
     align-items: center;
+    word-break: break-all;
 }
+
 .barrafinal{
     display: flex;
     width: 100%;
@@ -57,9 +65,10 @@ h3{
     position: fixed;
     left: 0px;
     bottom: 0px;
+    background-color: white;
 }
 .barrafinal input{
-    width:145px;
+    width:70%;
     height:30px;
     font-size: 18px;
     font-weight: 400;
@@ -79,6 +88,10 @@ h3{
     flex-direction: column;
     align-items: center;
     padding: 72px;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .telainicial img{
     width: 130px;
@@ -94,6 +107,7 @@ h3{
     text-align: center;
     font-size: 18px;
     font-weight: 400;
+    
 }
 .telainicial button{
     height: 45px;
@@ -102,6 +116,10 @@ h3{
     background-color: #E7E7E7;
     cursor: pointer;
     text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #696969;
+    border: none;
 }
 .status{
     background-color: #DCDCDC;
@@ -133,6 +151,55 @@ h3{
 .hidden{
     display: none;
 }
-ion-icon{
+
+.filtroPreto{
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top:0;
+    background-color: black;
+    opacity: 50%;
+}
+.listaUsuarios{
+    height: 100%;
+    width: 70%;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
+    font-size: 16px;
+    padding: 0 25px 10px 18px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    overflow:auto;
+}
+.feedParticipantes{
+    
+}
+.barrafinal ion-icon{
     cursor: pointer;
+}
+.pessoas{
+    display: flex;
+    align-items: center;
+}
+.pessoas ion-icon{
+    height: 17px;
+    width: 23px;
+    margin-right: 8px;
+}
+.listaUsuarios div:nth-child(2){
+    margin-top: 20px;
+}   
+.listaUsuarios strong{
+    margin-top: 20px;
+}
+p{
+    font-weight: 400;
+    color:black;
 }
