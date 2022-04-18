@@ -82,8 +82,11 @@ function receberMensagem(){
 function renderizarMensagem(resposta){
     document.querySelector(".conteudo").innerHTML=""
     for(let i=0;i<resposta.data.length;i++){
+        if(resposta.data[i].type==="private_message"&&resposta.data[i].to!==nickentrada.name&&resposta.data[i].from!==nickentrada.name){
+            i++
+        }
     document.querySelector(".conteudo").innerHTML+=`
-    <div class="mensagens ${resposta.data[i].type}"><h1><span>(${resposta.data[i].time})</span> 
+    <div class='mensagens ${resposta.data[i].type}'><h1><span>(${resposta.data[i].time})</span> 
     <strong>${resposta.data[i].from}</strong> 
     para <strong>${resposta.data[i].to}</strong>: ${resposta.data[i].text}</h1></div>`
     document.querySelector('.mensagens:last-child').scrollIntoView()
@@ -117,9 +120,22 @@ function renderizarParticipantes(resposta){
     <ion-icon name="people"></ion-icon> <p>Todos</p>
     </div>`
     for(i=0;i<resposta.data.length;i++){
-        elemento.innerHTML+=`
-        <div class="pessoas" onclick="check(this)"><ion-icon name="person-circle"></ion-icon>
-        <p>${resposta.data[i].name}</p></div>`
+        if(resposta.data[i].name===destinatario){
+            elemento.innerHTML+=`
+            <div class="pessoas" onclick="check(this)"><ion-icon name="person-circle"></ion-icon>
+                <p>${resposta.data[i].name}</p>
+                <div class="icone"><ion-icon name="checkmark"></ion-icon></div>
+            </div>`
+        }
+        else{
+            elemento.innerHTML+=`
+            <div class="pessoas" onclick="check(this)"><ion-icon name="person-circle"></ion-icon>
+            <p>${resposta.data[i].name}</p></div>`
+        }
+    }
+    if(document.querySelector(".icone")===null){
+        document.querySelector(".participanteselecionado").innerHTML+=`
+        <div class="icone"><ion-icon name="checkmark"></ion-icon></div>`
     }
 }
 function retornar(){

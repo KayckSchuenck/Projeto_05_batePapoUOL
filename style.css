@@ -188,6 +188,7 @@ span{
 .pessoas{
     display: flex;
     align-items: center;
+    margin-bottom: 5px;
 }
 .pessoas ion-icon{
     height: 25px;
@@ -199,8 +200,8 @@ p{
     font-weight: 400;
     margin-right: 20%;
 }
-.selecionado ion icon{
-    background-color:#28BB25;
+.icone ion icon{
+    color:#28BB25;
 }
 .barrafinal span{
     font-size: 14px;
