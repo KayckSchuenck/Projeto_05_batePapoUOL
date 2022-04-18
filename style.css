@@ -34,7 +34,11 @@ span{
     color:#aaaaaa;
     font-weight: 400;
 }
-
+p{
+    cursor: pointer;
+    font-weight: 400;
+    margin-right: 20%;  
+}
 .conteudo{
     width: 100%;
     margin-bottom: 80px;
@@ -61,7 +65,7 @@ span{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 26px;
+    padding-bottom: 5px;
     position: fixed;
     left: 0px;
     bottom: 0px;
@@ -78,8 +82,14 @@ span{
     color: black;
     font-style: italic;
 }
-
-
+.barrafinal ion-icon{
+    cursor: pointer;
+    font-size: 26px;
+}
+.barrafinal span{
+    font-size: 14px;
+    font-weight: 300;
+}
 .telainicial{
     background-color: #ffffff;
     height: 100%;
@@ -169,7 +179,6 @@ span{
     right: 0px;
     top: 0px;
     z-index: 1;
-    font-size: 16px;
     padding: 25px 25px 10px 18px;
     background-color: white;
     text-align: center;
@@ -180,33 +189,30 @@ span{
     display: flex;
     flex-direction: column;
     margin: 20px 0;
-    word-break: break-all;
 }
-.barrafinal ion-icon{
-    cursor: pointer;
-}
+
 .pessoas{
     display: flex;
     align-items: center;
     margin-bottom: 5px;
+    text-align: left;
+    word-break: break-all;
 }
 .pessoas ion-icon{
-    height: 25px;
-    width: 25px;
+    font-size: 25px;
     margin-right: 8px;
 }
-p{
-    cursor: pointer;
-    font-weight: 400;
-    margin-right: 20%;
+.icone{
+    color:#28BB25; 
 }
-.icone ion icon{
-    color:#28BB25;
-}
-.barrafinal span{
-    font-size: 14px;
-    font-weight: 300;
-}
+
 .publico{
     margin-top: 10px;
+}
+.visibilidadeselecionada ion-icon:last-child{
+   font-size: 20px;
+   color:#28BB25;
+}
+.participanteselecionado ion-icon:last-child{
+    font-size: 20px;
 }

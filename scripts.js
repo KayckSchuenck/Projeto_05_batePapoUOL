@@ -42,7 +42,7 @@ function carregarSite(){
 document.querySelector(".telainicial").classList.add("hidden")
 document.querySelector("header").innerHTML=`
 <img/ src="images/logo.png">
-<div onclick="getParticipantes();montarLista();"><ion-icon name="people"></ion-icon></div>`
+<div onclick="getParticipantes();montarLista();tornarPublico();"><ion-icon name="people"></ion-icon></div>`
 receberMensagem()
 document.querySelector(".barrafinal").innerHTML=`
 <input type="text" placeholder="Escreva aqui..."/>
@@ -116,25 +116,25 @@ function getParticipantes(){
 function renderizarParticipantes(resposta){
     let elemento=document.querySelector(".feedParticipantes")
     elemento.innerHTML=`
-    <div class="pessoas participanteselecionado" onclick="check(this);tornarPublico();">
+    <div class="pessoas" onclick="check(this);tornarPublico();">
     <ion-icon name="people"></ion-icon> <p>Todos</p>
     </div>`
     for(i=0;i<resposta.data.length;i++){
         if(resposta.data[i].name===destinatario){
             elemento.innerHTML+=`
-            <div class="pessoas" onclick="check(this)"><ion-icon name="person-circle"></ion-icon>
+            <div class="pessoas participanteselecionado" onclick="check(this);tornarReservado();"><ion-icon name="person-circle"></ion-icon>
                 <p>${resposta.data[i].name}</p>
                 <div class="icone"><ion-icon name="checkmark"></ion-icon></div>
             </div>`
         }
         else{
             elemento.innerHTML+=`
-            <div class="pessoas" onclick="check(this)"><ion-icon name="person-circle"></ion-icon>
+            <div class="pessoas" onclick="check(this);tornarReservado();"><ion-icon name="person-circle"></ion-icon>
             <p>${resposta.data[i].name}</p></div>`
         }
     }
     if(document.querySelector(".icone")===null){
-        document.querySelector(".participanteselecionado").innerHTML+=`
+        document.querySelector(".pessoas").innerHTML+=`
         <div class="icone"><ion-icon name="checkmark"></ion-icon></div>`
     }
 }
