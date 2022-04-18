@@ -170,16 +170,17 @@ span{
     top: 0px;
     z-index: 1;
     font-size: 16px;
-    padding: 0 25px 10px 18px;
+    padding: 25px 25px 10px 18px;
     background-color: white;
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    justify-content: space-between;
     overflow:auto;
 }
 .feedParticipantes{
-    
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    word-break: break-all;
 }
 .barrafinal ion-icon{
     cursor: pointer;
@@ -189,17 +190,22 @@ span{
     align-items: center;
 }
 .pessoas ion-icon{
-    height: 17px;
-    width: 23px;
+    height: 25px;
+    width: 25px;
     margin-right: 8px;
 }
-.listaUsuarios div:nth-child(2){
-    margin-top: 20px;
-}   
-.listaUsuarios strong{
-    margin-top: 20px;
-}
 p{
+    cursor: pointer;
     font-weight: 400;
-    color:black;
+    margin-right: 20%;
+}
+.selecionado ion icon{
+    background-color:#28BB25;
+}
+.barrafinal span{
+    font-size: 14px;
+    font-weight: 300;
+}
+.publico{
+    margin-top: 10px;
 }
